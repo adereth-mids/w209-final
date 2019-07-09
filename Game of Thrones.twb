@@ -1,0 +1,938 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0618.0959                               -->
+<workbook original-version='18.1' source-build='2019.2.1 (20192.19.0618.0959)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='episodes' inline='true' name='federated.07eagxp0eest5p1aocwtm1ms848b' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='episodes' name='semistructpassivestore-direct.1vrsuvj092k1xs1cwkuwu0wsfg3s'>
+            <connection class='semistructpassivestore-direct' directory='D:/Dropbox/Classes/W209' filename='episodes.json' password='' server=''>
+              <semistruct-schemas>
+                <semistruct-schema table='[episodes.json]'>
+                  <map key='episodes' value='true' />
+                  <map key='episodes.Value' value='true' />
+                  <map key='episodes.Value.openingSequenceLocations' value='false' />
+                  <map key='episodes.Value.scenes' value='true' />
+                  <map key='episodes.Value.scenes.Value' value='true' />
+                  <map key='episodes.Value.scenes.Value.characters' value='true' />
+                  <map key='episodes.Value.scenes.Value.characters.Value' value='true' />
+                  <map key='episodes.Value.scenes.Value.characters.Value.killedBy' value='false' />
+                  <map key='episodes.Value.scenes.Value.characters.Value.married' value='false' />
+                  <map key='episodes.Value.scenes.Value.characters.Value.sex' value='false' />
+                  <map key='episodes.Value.scenes.Value.characters.Value.sex.with' value='false' />
+                  <map key='episodes.Value.scenes.Value.characters.Value.weapon' value='false' />
+                  <map key='episodes.Value.scenes.Value.characters.Value.weapon.Value' value='false' />
+                  <map key='{root}' value='true' />
+                </semistruct-schema>
+              </semistruct-schemas>
+            </connection>
+          </named-connection>
+        </named-connections>
+        <relation connection='semistructpassivestore-direct.1vrsuvj092k1xs1cwkuwu0wsfg3s' name='episodes.json' table='[episodes.json]' type='table' />
+        <cols>
+          <map key='[Document Index (generated)]' value='[episodes.json].[Document Index (generated)]' />
+          <map key='[alive]' value='[episodes.json].[episodes.Value.scenes.Value.characters.Value.alive]' />
+          <map key='[altLocation]' value='[episodes.json].[episodes.Value.scenes.Value.altLocation]' />
+          <map key='[born]' value='[episodes.json].[episodes.Value.scenes.Value.characters.Value.born]' />
+          <map key='[characters Index (generated)]' value='[episodes.json].[episodes.Value.scenes.Value.characters.Index (generated)]' />
+          <map key='[episodeAirDate]' value='[episodes.json].[episodes.Value.episodeAirDate]' />
+          <map key='[episodeDescription]' value='[episodes.json].[episodes.Value.episodeDescription]' />
+          <map key='[episodeLink]' value='[episodes.json].[episodes.Value.episodeLink]' />
+          <map key='[episodeNum]' value='[episodes.json].[episodes.Value.episodeNum]' />
+          <map key='[episodeTitle]' value='[episodes.json].[episodes.Value.episodeTitle]' />
+          <map key='[episodes Index (generated)]' value='[episodes.json].[episodes.Index (generated)]' />
+          <map key='[flashback]' value='[episodes.json].[episodes.Value.scenes.Value.flashback]' />
+          <map key='[greensight]' value='[episodes.json].[episodes.Value.scenes.Value.greensight]' />
+          <map key='[location]' value='[episodes.json].[episodes.Value.scenes.Value.location]' />
+          <map key='[mannerOfDeath]' value='[episodes.json].[episodes.Value.scenes.Value.characters.Value.mannerOfDeath]' />
+          <map key='[name]' value='[episodes.json].[episodes.Value.scenes.Value.characters.Value.name]' />
+          <map key='[sceneEnd]' value='[episodes.json].[episodes.Value.scenes.Value.sceneEnd]' />
+          <map key='[sceneStart]' value='[episodes.json].[episodes.Value.scenes.Value.sceneStart]' />
+          <map key='[scenes Index (generated)]' value='[episodes.json].[episodes.Value.scenes.Index (generated)]' />
+          <map key='[seasonNum]' value='[episodes.json].[episodes.Value.seasonNum]' />
+          <map key='[subLocation]' value='[episodes.json].[episodes.Value.scenes.Value.subLocation]' />
+          <map key='[title]' value='[episodes.json].[episodes.Value.scenes.Value.characters.Value.title]' />
+          <map key='[warg]' value='[episodes.json].[episodes.Value.scenes.Value.warg]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Document Index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Document Index (generated)]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>Document Index (generated)</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[episodes Index (generated)]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Index (generated)</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.episodeAirDate</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[episodeAirDate]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.episodeAirDate</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.episodeDescription</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[episodeDescription]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.episodeDescription</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.episodeLink</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[episodeLink]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.episodeLink</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.episodeNum</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[episodeNum]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.episodeNum</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.episodeTitle</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[episodeTitle]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.episodeTitle</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[scenes Index (generated)]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Index (generated)</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.altLocation</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[altLocation]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.altLocation</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.characters.Index (generated)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[characters Index (generated)]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.characters.Index (generated)</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.characters.Value.alive</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[alive]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.characters.Value.alive</remote-alias>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.characters.Value.born</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[born]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.characters.Value.born</remote-alias>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.characters.Value.mannerOfDeath</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[mannerOfDeath]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.characters.Value.mannerOfDeath</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.characters.Value.name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.characters.Value.name</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.characters.Value.title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[title]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.characters.Value.title</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.flashback</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[flashback]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.flashback</remote-alias>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.greensight</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[greensight]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.greensight</remote-alias>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.location</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[location]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.location</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.sceneEnd</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sceneEnd]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.sceneEnd</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.sceneStart</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sceneStart]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.sceneStart</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.subLocation</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[subLocation]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.subLocation</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.scenes.Value.warg</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[warg]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.scenes.Value.warg</remote-alias>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episodes.Value.seasonNum</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[seasonNum]</local-name>
+            <parent-name>[episodes.json]</parent-name>
+            <remote-alias>episodes.Value.seasonNum</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Scene Duration' datatype='real' name='[Calculation_1129840565640441856]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[sceneEnd] - [sceneStart]' />
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Document Index (generated)]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>Document Index (generated)</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' is-auto-gen-lod-field='true' name='[Number of Records per characters]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ INCLUDE [Document Index (generated)],[scenes Index (generated)],[episodes Index (generated)] : COUNTD([characters Index (generated)]) }' />
+        <desc>
+          <formatted-text>
+            <run>A calculated measure that is at characters level of detail</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' is-auto-gen-lod-field='true' name='[Number of Records per episodes.json]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([Document Index (generated)])' />
+        <desc>
+          <formatted-text>
+            <run>A calculated measure that is at episodes.json level of detail</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' is-auto-gen-lod-field='true' name='[Number of Records per episodes]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ INCLUDE [Document Index (generated)] : COUNTD([episodes Index (generated)]) }' />
+        <desc>
+          <formatted-text>
+            <run>A calculated measure that is at episodes level of detail</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' is-auto-gen-lod-field='true' name='[Number of Records per scenes]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ INCLUDE [Document Index (generated)],[episodes Index (generated)] : COUNTD([scenes Index (generated)]) }' />
+        <desc>
+          <formatted-text>
+            <run>A calculated measure that is at scenes level of detail</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Alive' datatype='boolean' name='[alive]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.characters.Value.alive</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Alt Location' datatype='string' name='[altLocation]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.altLocation</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Born' datatype='boolean' name='[born]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.characters.Value.born</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[characters Index (generated)]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.characters.Index (generated)</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Episode Air Date' datatype='string' name='[episodeAirDate]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.episodeAirDate</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Episode Description' datatype='string' name='[episodeDescription]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.episodeDescription</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Episode Link' datatype='string' name='[episodeLink]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.episodeLink</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Sum' caption='Episode Num' datatype='real' name='[episodeNum]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.episodeNum</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Episode Title' datatype='string' name='[episodeTitle]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.episodeTitle</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[episodes Index (generated)]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Index (generated)</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Flashback' datatype='boolean' name='[flashback]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.flashback</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Greensight' datatype='boolean' name='[greensight]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.greensight</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Location' datatype='string' name='[location]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.location</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Manner Of Death' datatype='string' name='[mannerOfDeath]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.characters.Value.mannerOfDeath</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.characters.Value.name</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Count' caption='Scene End' datatype='datetime' datatype-customized='true' name='[sceneEnd]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.sceneEnd</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Scene Start' datatype='datetime' datatype-customized='true' name='[sceneStart]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.sceneStart</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[scenes Index (generated)]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Index (generated)</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Sum' caption='Season Num' datatype='real' name='[seasonNum]' role='dimension' type='ordinal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.seasonNum</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Sub Location' datatype='string' name='[subLocation]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.subLocation</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.characters.Value.title</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Warg' datatype='boolean' name='[warg]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>episodes.Value.scenes.Value.warg</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <folder name='Characters' role='dimensions'>
+        <folder-item name='[alive]' type='field' />
+        <folder-item name='[born]' type='field' />
+        <folder-item name='[characters Index (generated)]' type='field' />
+        <folder-item name='[mannerOfDeath]' type='field' />
+        <folder-item name='[name]' type='field' />
+        <folder-item name='[title]' type='field' />
+      </folder>
+      <folder name='Episodes' role='dimensions'>
+        <folder-item name='[Document Index (generated)]' type='field' />
+        <folder-item name='[episodeAirDate]' type='field' />
+        <folder-item name='[episodeDescription]' type='field' />
+        <folder-item name='[episodeLink]' type='field' />
+        <folder-item name='[episodeNum]' type='field' />
+        <folder-item name='[episodeTitle]' type='field' />
+        <folder-item name='[episodes Index (generated)]' type='field' />
+        <folder-item name='[seasonNum]' type='field' />
+      </folder>
+      <folder name='Scenes' role='dimensions'>
+        <folder-item name='[altLocation]' type='field' />
+        <folder-item name='[flashback]' type='field' />
+        <folder-item name='[greensight]' type='field' />
+        <folder-item name='[location]' type='field' />
+        <folder-item name='[sceneEnd]' type='field' />
+        <folder-item name='[sceneStart]' type='field' />
+        <folder-item name='[scenes Index (generated)]' type='field' />
+        <folder-item name='[subLocation]' type='field' />
+        <folder-item name='[warg]' type='field' />
+      </folder>
+      <layout dim-ordering='alphabetic' dim-percentage='0.500437' measure-ordering='alphabetic' measure-percentage='0.499563' show-structure='false' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='episodes' name='federated.07eagxp0eest5p1aocwtm1ms848b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07eagxp0eest5p1aocwtm1ms848b'>
+            <column caption='Scene Duration' datatype='real' name='[Calculation_1129840565640441856]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[sceneEnd] - [sceneStart]' />
+            </column>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column aggregation='Sum' caption='Episode Num' datatype='real' name='[episodeNum]' role='dimension' type='ordinal'>
+              <desc>
+                <formatted-text>
+                  <run>episodes.Value.episodeNum</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>episodes.Value.scenes.Value.characters.Value.name</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[episodeNum]' derivation='None' name='[none:episodeNum:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[name]' derivation='None' name='[none:name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[seasonNum]' derivation='None' name='[none:seasonNum:ok]' pivot='key' type='ordinal' />
+            <column aggregation='Count' caption='Scene End' datatype='datetime' datatype-customized='true' name='[sceneEnd]' role='dimension' type='ordinal'>
+              <desc>
+                <formatted-text>
+                  <run>episodes.Value.scenes.Value.sceneEnd</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column caption='Scene Start' datatype='datetime' datatype-customized='true' name='[sceneStart]' role='dimension' type='ordinal'>
+              <desc>
+                <formatted-text>
+                  <run>episodes.Value.scenes.Value.sceneStart</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column aggregation='Sum' caption='Season Num' datatype='real' name='[seasonNum]' role='dimension' type='ordinal'>
+              <desc>
+                <formatted-text>
+                  <run>episodes.Value.seasonNum</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_1129840565640441856]' derivation='Sum' name='[sum:Calculation_1129840565640441856:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.07eagxp0eest5p1aocwtm1ms848b].[none:name:nk]' direction='DESC' using='[federated.07eagxp0eest5p1aocwtm1ms848b].[sum:Number of Records:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.07eagxp0eest5p1aocwtm1ms848b].[none:episodeNum:ok]' value='21' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.07eagxp0eest5p1aocwtm1ms848b].[none:name:nk]' value='188' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.07eagxp0eest5p1aocwtm1ms848b].[sum:Calculation_1129840565640441856:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07eagxp0eest5p1aocwtm1ms848b].[none:name:nk]</rows>
+        <cols>([federated.07eagxp0eest5p1aocwtm1ms848b].[none:seasonNum:ok] / [federated.07eagxp0eest5p1aocwtm1ms848b].[none:episodeNum:ok])</cols>
+      </table>
+      <simple-id uuid='{57749024-D4AF-412E-AF1C-573118223D9F}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.07eagxp0eest5p1aocwtm1ms848b].[sum:Calculation_1129840565640441856:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07eagxp0eest5p1aocwtm1ms848b].[none:episodeNum:ok]</field>
+            <field>[federated.07eagxp0eest5p1aocwtm1ms848b].[none:name:nk]</field>
+            <field>[federated.07eagxp0eest5p1aocwtm1ms848b].[none:seasonNum:ok]</field>
+            <field>[federated.07eagxp0eest5p1aocwtm1ms848b].[yr:sceneStart:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{83703361-8BCE-4AB4-89CF-590FB0512C20}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO2915MdV5rY+cu8eb2/5W/5greEIUGyQdcku9mjNjM9RqvtXSkU0o52Yzf2
+      YTd2/4F90Ebsgx71oJ0NSTOjjlFrZnqmp8Xppm+STQIgSDZsoYACClX3ljfX23T7UHAnTwIs
+      DsGuQiF/DyTquyczT5qTeb7zOcW2bRsPj8cUdbM74OGxmXgDwOOxxhsAHo813gDweKzxBoDH
+      Y403ADweax75AWBZFtVqdbO78VCpVCqb3YWHiq7rNBqNze6GK4/8APhtUVieY+JGfrO78dCw
+      TJ3PP/mY2eXiZnflobGYv8nZc5e+1DbeANgg6UwnK8uLm92Nh4aiakTDASrV2mZ35aERjUXJ
+      z87yZSy73gDYIMsLs6wsr2JsdkceEkarxKWrs6Tisc3uykOjVCyRjMe/1ABQHnVXCMuyqNfr
+      xGLb50ZWKhXi8fhmd+Ohoes6hmEQDoc3uysS3hfA47Fm2wwA2zK4eTPnENrkbt5gfmlNEK8s
+      zjE1Myu1vXnzpmOfJhPjl6g12/dKmcvdZLUortQszuUYv3pDkNXKBa5MTGLe84019QYTExM0
+      2uYd2dJCnmq9zc3rVylU6nfkhZVFCmVxjl4rF5iYmMQQ9tlk4soVqo220LZeWmGxIPZzaT5P
+      bk7UZdr1MteuT2PdI9ObNa6MX2a1dM/xbYvpG9dYWis5zn2G2YVlYdvc3CKVwgqT99wT02gx
+      LV13i+kbkyytisr40nyO6fy8o618jyy9xZXxcRrteyenNvnpGxTKdaHtfP4mV6+L22+bAaCo
+      GsGgJsnT6TSqqgiySCRC1aH8VYorFKriBbOsFo26jmnd87RZJvOLy7Ta4sPW3dtHLBISZLVq
+      hWatin7vw9pu0tYNFpfvPjCpTJx6qUYwlqBaLNyRJ5Np2u2m2PdYgkjIz70TV58WQFMsmm39
+      jsy2LZZW1mg1xHOq12qYpiXIZufmscy2cJ7+UJR0Mk40Grnb0LaoVGrUHNeu0WiysLAgbKsp
+      NqVag5iPO3qTTwsS8DsfOYV0Jo0i3iIi4Qi1mnic4uoS5UZLkOl6k1bLwLr3HhkN5paLtNti
+      257ePiKOadi2GQC22WZhbk54g8L6G8NyqDmVSgWfTzx107LRGzXhzazYKuFoiHbrnodd8dGR
+      TtJ2DIBqqUhHd48gU30agYAP+57nTQtFCaiQSWXuyJbmF1irlCmvLuMPR+/IV5cXWVxeFfa5
+      NJej0mpzr6antxoYtoJ9z4Fsy8LQdWp1xwCKRmm1RFlHRwbL0NHv/VTZFooWIqTdfTJt20YL
+      +FEd1y4Wi5FKpe/83apXmJubwzJNVmstbr+WTL3B/Nwc5do9x7dNpm7O4NREK9UqPp9PkFm2
+      RbNaoW3cPU+fz08w6KOt3/MF8IXoSEall1S5XKaru0uQeUrwFsRTgn97aLA+sh9Va6plWfzb
+      UxdY1cXPeiKk4VfFN1VIUwlqoky3bKotcXFTU1X+5yf3b+j4n8wtcWmlIMg0FSIBn9TW7U0T
+      8Ck4ZmiELJuaQ+ZTFAKOvitA0OdoCBztzhLzBwTZ5dUVbpbFuXtTtyjUxXNXFEiG/NI+0xEf
+      mqOjO1MZstGEIFus17i0uiTIVBtqTYO2Y56TCvvwOWSKAgqirDMcYW9afHM3DYM3HPoAQKlp
+      CjoXQNSvEtTEfQ7E4xzr6VkfAIqi3HnjzORzDA0M3tPU5vrEJUx/gt1jQ9IBNxvLslhsm8y3
+      xAHQofoIaOKViCgQcTwwLdOiZIjt/Kq94Tew4S+yKh4av6JgOG7s/T6zIVVBdba1LaqOh82n
+      QNjnMmOV5tTr05x4UNRH7EqZmuOFUMVmxdF3hfXnwUlYU/E7jq+Fw9J1KmDRKImD32fZVBWF
+      pmO/QZ8Pv+N+uB4/GJSOo+o6VVU+9zVLHgA6ChFHW8PvJx6PI2mNuVyO3PWrxCMBphcr7Dn2
+      HJVCgVAmwjtv/T1+zU/bADucJqBX6eztYf/evVJHPDweBYRhUVxZwOe/O08bGR2mrRvEE0mK
+      xQJdfUMEfOuvjN64huL3sSYuMnh4PFIIX4BUZy/PdPa6NMuw+86/D3zdffLw+K2xLVaBfnzu
+      nDS/LbsoQ4ZpYTlkAU0hHRFngrZt41gqB2Cu1KLt2Ol3dw7x0nBWkF0vlPjpNdEoZlk2N1w+
+      l4ezMWJBcc6sNg1mW+JxTMsWlylv9dPZH4BsKiAp+23DwnCcU8CnkAzJyrrmolj/ZrZKw7HQ
+      4PbkxIM+BlJBcX+2Tb1pUncot/0pPwGHXjFfalNsmIIsFlTpS4hKvWXbNHS5AxG/Itl9QNYr
+      FittJpbq4hSosDzHO++8S61990QLBXGFAyA3cx+3YNumUFi36JUcKw4eHlsR4dWX7uwjHJxh
+      cvwCAb+fmZvX6Roc4+rl8/jjEVamFxnYc5zScp6BbJr/8Cf/kaEnTmDUK6Sjfpp2gExU4703
+      p7D8Cgd3j/LWux+z7/Bhdu3aw2Bf1/364eGxKUirQIlkgqSvQc6KMzAyimXDbQN7/8go6G38
+      isHE5Ut0ZrO0TB+Dfd0AhG0bDJ2QZhDt24ltw74jx0lEw97D77ElEQeAonDg4H7m5+Y40ZfF
+      ZSp4i2EA9h52//XgE0fv/NtbIPXYymwLJfj/fu8Mqw5lMBX2S4abeFCVFE4Ap33Jpyj8aO9B
+      qd2/Pz/OQs1t3Vd8U/hViDuUS9u2KTZlzXqt1sZwaOa7434SadGQpYJ0Pn5V5Qdj8ivmJxMT
+      rDVFf59K05SU2KCmkIrIDoROSyxAZ1STjFYHMz2MJjKC7NziKj++NCkeR4HuiCYpwf/y8H46
+      wuJ5vpfLc3lV9H9SQLJCK8q6JdnJa0M7iQdEJfzD2TxXC6JHsG7aNA1bVIIryzP86oOPKdZE
+      J6IvYmUhxzvvvktzu4RLeTw2CMO/upxj6OBTfPbhG1ydnOXQkb3cnK8ynAni82v85txFhvYd
+      ZrQzSLWuUmxU6RsY49CuQYJTc0xfPMWluToxtUEy3UFNB6U8RyCRoWBEGUz5aBSWOXt5iieO
+      HkVvG7z80snNOncPD/ELEIgkuHruDOlkB9n+AWx/lMMH95Du6iMSUNmx/wnSyTj7Dp8gNzfD
+      /tE+ZvPrS6KJRIJyw6AjFSE7NIrP1ikWChCI4VcMxsZ2UlrIkekf4dCx40QjMXo7Upty0h4e
+      txG+AB0jh3htZP3fR10a38Zs1Tj54iv0dqYYGF2XHTqwT2izkL9JdixBtvvWHNG2mdWeoj+b
+      vceq7OGxuWwLJfjffHiWgkO/DGoqPofipCpInpd+VZEU1vXt3ayJskXxWFcv+zs6BdlstcL7
+      szOCzLZtyi3RwgkQ8cv9TGETiImWz3LTJF8SdbP7WYLDLvt0u8uGZdN2mLwV1l3J3do6eb6/
+      n0Nd4rnnKiVOL4qGUtWy+Z3BHVI8wI/Hr1BsiVFb8aBK2C/eD920aBmyZbzQkK9nKuyTzj3i
+      l93gLdvGxjEFsm2b06dPSzsFsC2ds6dOsbi4SOUebde2bXL5nOs2Hh5bHWGoW/UlJi5OEAoE
+      aSk2vnYTW4vw2cUr/PGPvsfqWhG/fYEZsw/mzpDsHELrGGHq87f5zh/8Mzriofsdx8NjSyJ8
+      AXIzS+w6tIOFmTl27j/CTG6OsN+gP9sFFqQ64qjhNMlQm3CiE7vRYmxslIH+XhqNL7d06uGx
+      FRC+ACP7DjFy69+22eLpky+S7e3kwKF12dNP37tkeVdN7v3WD77eXnp4fE3I2s4tFF+QbG/w
+      fj9vKdZdhUVZLKhIltOOiCa5PrcMy1U5dXMJbhkWzjUD00W7bOgWMwVRuVOAjph8uZtOH2VA
+      w0av6oJsIBbnD3aKccpt0+Svr1+Rt3dR1p/o7GFnqkOQTZdLvJd3KuvS7gD4o927SYfEKe5P
+      Lt/g//3sqiBLhjSGM2I7zbZ5/eYkuuN+lNuy5fRYVx8HOmXF+szSrNQ2E5WvZ9uwXcNPdYey
+      v1RpM7HcEKdA9cISp05/isvzcAezWeHUqdMsLq5yj9c0tl4hP799Mg17PB4IQ6heKVNptrg5
+      /im/ubHGYMKHGgqSz61yYG8/56fW+N0XDlAo12mf/TXR3YcZf/d1evccpb9b46PTM/yTH/0e
+      UZeMCB4eWxHhC6BFYviNKrnVBl2ZOKmOHuLBEAGlxswtGWqIdNgm2tOPUlsl3ddP0/QxNjpG
+      f1ealnMu4uGxhZFigl96RY4JPnD0uPD3M8+/fPePI3d/+853X8bD41FiW1iC/5/3z7Dq+PCk
+      I5oUb5oI+Yg73KENy5asjLZtS7HD4G5dXq7qFBvOxFqKq9t10sV9180SbNV1Zpqy67JTgQeI
+      +uV9vjI4RsqRF+ji6gI3K2J4q2nJlmTLtim5uG37FKT8nQvltnTuyZCPIYcS7LNtmi1LygvU
+      HfNLLtYt3ZKszoZLPwHJugsQ0uQ8S8e6+hhNpgXZxNoab03POCzBeoNTH39M9T5acK1UoG3Z
+      5GfcLb+22aJYWveXL5XKrm08PLYSwivl6tmzjB57jomzbzO5YtETtlD9fjp6evn1e++yY+dx
+      nv72M+RzeRIhmz/7+Yc8tX+Iph3AqheIxKO0KxbVQJjK7FWGBvq5OLPKnr44B598gZRnKfbY
+      YggDYGjvTk6dOUVIi3FoXzd2u0k8ZHNlKsfIroN0xtftAu16mUvXTPr7ewgn0uuxwIkodquA
+      kkgzm7vJ7h07MCw4evgAIcXwHn6PLYkwAMLpPr75fJ/UaGinmAzrhW+99sCdPvXUoYfQNQ+P
+      r59toQT/X2+fYtmhyB7ORiW33krTFHIewboS2pcUXY/v52b8yuAYmZDo0nt2cZ7LqyuCbCAW
+      5+WhEUGmWyZ/Py1aTWHdQuk8UlA3qTty4/dH4zzX//UnJ67pOv/6159L8gO9YSnj9eGOXsaS
+      YkzwVKnIr2ZFHdFn2/zh2C7JHfpPL41TaMoWc2deK01VCDmSAJuWzXxFtJYD7OoMSspxvthi
+      rS7qtYe6Mvxwz5hcIGPmlmuzrTcoVJrOnynM5ajeJ/b3dhItW29QqnvOcR5bH5fs0Hmufn6K
+      ZFcfxYpFpd0gGAyQpMqqleRwxk84M8DZN/+GQDzNarGOEkzgo01/bw/nzn5ERyLCRCWONfcZ
+      nX0D+DI7ePH4ns04Pw+PByIMgNvZodVwHJ/dRCFINjtIIGhDNUBP1xChdoEbV69iB6L4FZ2R
+      0WGuzRTYNdSLadl0ZlJU2gqdUT/KwAh9XSlCt+MmPTy2GBvMDn0vg6yryXff6Ie8hNEejyjb
+      Qgl+f/oKpkNBe7JriGRgc2pSLTeq/GZVdt914+nuYRIBcYn4+tIcN9piedOuUIwjnf0b2ufH
+      izep6qJyuSfZzVBctIYuNSpcWJsTZA96GpyW4NWaTsVRmWc0meTloWFBpus6v8pfw9LEe/SN
+      3hFi/i92uV+ol7lUmP/CdgDP9owS0cRFjYtr8+RrcrJmFUVOjHXl5iIzufydvy9P5vHyXXls
+      V6TEWJfmg/RoS7SaTRauj7NEF2M7B+4fOePh8QgjJcY6ONxBS40xMzWJFknSmUlsn2LCHh4O
+      pMRYHcCend6qjcfjwbaY2cxX2tQdJZKWateljMINXU6wpKkQcyjQPkXh93fKdYL/5Nw481Ux
+      O7SmIrn0+lSI+OXs0G5Otp/mL0mK50BQJewoCVRqFrleFBW5+2WHzhVbUnboqbUZfKpooR1J
+      JHhlSLTPNA2Dv5yU44xjAdlt+6nerJQderpc4scTFwWZz7JZrbSl7NDHO21ijpLE7+fds0M7
+      yx4pQDosP76mix97qWEyXxatxqqybmG+ryX4XuxGgdzyeiHtT8+cpt0uc/Zz+SK54ZVK8tjK
+      PLhOcDVMvJUjEApzY6nB0y+8Srkww7vvtVG1Nu++NUtIM7AzO6nPfYbRDhFKdWO2qwQiUQzd
+      ZDE/yXf/4L8j7pJuz8Njs3lgneDRsTHwR/H7fTxxYDetlk7nwD7CIZtsJnGn3djoKL2DgwwO
+      DGC11z81gXCC7kyaHTvGXMoteHhsDb7YEjz8bccmd+d89xqAew88I8k8PLY628ISXK/XicVi
+      m92Vh8a5XJ4PVkQXa1WRY2ADqso/3S+XcvqPF8ZZbjQEWUdEI+lQGrPROM/0Dm6oT2/MXKfc
+      Fq3LbnWXh+IJyW1b13X+w7mLNBym5P9+/14y4X9YoFTT0Hl79rokfyk7RtQfcNlC5FqhwHv5
+      3JcvkWTbJp+dOcXi6hfH/OqNCrVWk3x+Y2ZsD4/fNg8skfTEyZMk/QqFlQUCmsJMWeP3XzvB
+      2mqBcPgG/+UvTnHyG09xLbfKvv4wa3UVo6VjA6GwhlpbpJbeTfnGRcpHn2P/7o29bTw8fls8
+      sERSOqxRNtfXs5VgAqO0gm5BMpOmsLbGwaPHaNRbdGUSFNbq+Kwm3f09AITjGY4ef5JYwMfe
+      gwdRzJZ8dA+PTWaDJZLWjS1PPvkkAE89/cwDd3po391ySc92PKChh8cmsy2U4P/jv37IvCPW
+      dzgdJuyw8HbH/HQ5TI+2bSOngVovneSk0jRwhgo/1dvHoc4uQTZdLvPGzZuO/an884Oywvp2
+      7galtmi19bdN6o6kXm4xwW3T5GdTskHy1cEdUmKsz5bmuVYUa+U2dYtiUzRP+xTY2XkfxdRx
+      Sfalehh2uFjnKiU+XhBLJPksm380JJdI+k+Xx6USSS8ODnDQkR16rlbmNyui23bQp/HKwE6p
+      i7+YnqSqizqsYcnK+kgiyTf6BmUl+INff8RSUVxBgPUH5fxnZ8gvLlIu1e/9gdxMXmrv4fEo
+      ICnBK8UKrdOnSQ0PMvXxm3QMPUHTqPHNb79MYW0VLaTy4aUCvbEqgXiaNSNGc/Yy6rd+QH+3
+      V/bU49FCGACBSIJ4zMLfNBnNplnpzNJomowMZTGxSSYztKwAfV1RLNPGr+iMjo7R8JWp1BuA
+      NwA8Hi0kJfjVkbt/f+f7YumjI0897b6XYS8rtMejybZQgr+KJfjKSoH/79yEIPOrKv/6myc2
+      tP0bN3J8NLsoyGIBlcG0HOvqzEwN6y7azhsQMU2soGi11U2bmi6r6wGXUk7fHpKV4FNzs1xe
+      E92MhxMJXnEk8Lofb+euU3HEGbslxspVSpxyKMGqZaOBVCJJQY4zNi05M7duWjQdbuwRTeNH
+      +2SX9ddvXpOU4Ce7s4xtJDv0Rkokwa3awFPj5OeLTI1/zodnL977o6cUezwyPLBE0kBcodwy
+      iGoGZigJdhSzOk0r0E1aXURNhjkxkmRhKcKbf/cTIslOalon4VqepYUcmaGDjPbGN+vcPDy+
+      EGEArJdIukFu1aIrEyedjJNQAdrMzxbw+Yqk0p2keodpFkzUWAj8Nomwn0Yogc9uMjo2RntF
+      Y2JinCMnnt2cs/Lw2CAbKpEELsmvRgbu/PNAHA4Mf+fO33bXDtKd3Xil8jy2OttCCf6zc+eo
+      KaKCFQuqUkzwkc4e9neIVtvZaoX38tPSfp3KGcBrQ2N0hCOC7DfLC0wUROWybVpSFmqQY4fB
+      PYY1iY0eEJXggViclwaGpbZu/HJ6kpLDdfloVy+7HHWCZyolPnRkclaAlEsppud6R4kHRMX+
+      59em+WR+SZAd6Ezzj/eLFlpd1zEMQ7IEfzh/g5ohKqzrirEcy11uyoqp2z36/tguEo5+Xi4s
+      MFcXQ3PbpkVDtzemBNt2g3xuWZCtLeT47OIE+ZxYaNnD41Hii+sEBwLUmmWqKzZXJoKo/hB7
+      9u5jcmKKF198no8/ep8P3vyvZPp3g96idzjLpWvzjGQCKJqfC+fP88oP/xk7+hL364OHx6bx
+      xXWCQz4s/CQT65/+YCRJf08HA90pPrt4lUQiSd/QDrpSUcrFIsvlBr0dSVIdvcRCGiO7D9ER
+      /+IIHQ+PzWBjdYJdNtyx7/DdPw5Cq1YimOriwJ4dQjuvWJLHVmZbKMHbLSa4UqkQj28f+4mu
+      6/zlxGXajuRl6bAmLVQYLpbg/miCp3rEzNgNQ+eNmUnpWIvVNqZj/aEzohEPiWuSfZEET3Rm
+      xSlQYXmOd95513UFw425XB7Dtpm49Bsmrs/cKZF0m3uTYrkl3PLw2GyEKVC6s49wcIapy59R
+      bIBRWUELx6nWq4TjKbLdGezqAhP5CuFEB4u5aX7/v/0+i0tFwmkNo17hgzf/hlTnEJWmwVqt
+      xrMHRjk/UyWmlJieWaC5coNIuou1cotgOER+ocC/+NHvb9b5ezzmSAu+iWQC21gPeOnKDqHY
+      NslMGrBYyM+QjGqMjA5zc3aVVDqNTwmh+SyazSaRiEI40YndbDEyPEiybkMwil6aIjrUia0o
+      +MIJVKvJyMgw+cUiRw57mYQ8Ng9xACgKBw7KHnZ3uRvSd69l+Bsv3HWHPnD4uLTVzh07JJlz
+      Hx4em8G2SNj5dzcmpezQPkW2KMYCKjGHS3JnKMrxrg0mh5q+zlpLjN890tnD3kznfbb4Yv7q
+      6lVWm2IIakaxISzGLmejcb7R9w+vE3xhdYGpsqij+RQIOurv+lUfL/bJsbYbZbpc4sM5R51g
+      y6Yr6sd0JPY62Tu6oRJJuUqJv5q8LMhCPo3fHdt3ny1ETi/McqMknnvSv27t/dKJsTw8thOu
+      ibF+/fp/IjJ6Aq0yj6ZpVOtV/IksRqtOPAQtO8ALz24sYMTDYyvjmhhreMc+xsbGALAMnUa5
+      yG1fpHAiTToZ/a131MPj6+C+ibEAhr/5KmarxqXJHIcO7PXSnHtsOx4rS/CZ+XnOr4herX6f
+      QtJhJbQsm3PzYikkgH91ZD/9cfHrd2pujguOTM4N3WSlJheXjQTkCInBVICQQzkMGSa6o61u
+      2jQN2UDpLO8E8PLAGMngPyzr8v3462sTUhKrkKZKGaurLZOlmliOyI/N/3hov+QO7caZhVkm
+      i6LCWmubrNVFF+WY38//clx2tHlzZlJysT7S2cdIQowJni4XObM4KyvBRXGRA7DJz+TIz0xj
+      tMvMzBWcDTw8HlkkJbjlH2Ti0/fxxyMsTFdJZ1SKVYtn93XxizevsXPPMP/uT9/g0FgPpq0R
+      y3SwOnON/Sdeoq/Dc3n2eLSQlOCpeyoEjoyOYVsWqXSK5OA+TLOB3SjTn+0ilunimeN7uDmz
+      RGcmyez8orRzD4+tjqQEf3ME4F4Dw90wvN/9wfcB2Hdr6lVcXeRbL58kGtwW9jSPx5DHSgl+
+      VNioO3TLNPnz8UuSXEW2guumJWW2DvtVuqKixdmybEmJBUiEfJLrsltirKlSkV854ox9ts0f
+      ju2SlOA/vTROoSkq1tGASthhnbYsW+q7ZdkUXOKEB1N+Ao4EXPW2Rduxg7FkihcGHpAd2rZN
+      CoWN1Pi1uXLxPJVKkXfeeZflQuXOL41KiZbRIJ9fecD2Hh6bxwOyQ2exl2Y4ff4qB44ew2y3
+      SQQt2oqfqQvnOPrKD7FKM1TbNlMT1xnbf5hgOEygXeDf/vu/4+iuPiqLS2QOHWTqk0sceuZF
+      9u7o2azz9PBw5b7ZocdGh7m+NMP+J44Rj0SIpKLYCkStNu2R3fR2xJkrAWqAo8eOEFAhkUiw
+      tLJGf7aXWKab3YNZ8m3Yf/gAdssrkeSx9XhgdujMC6+6bnTglld05zExW/ShA+uu1LvucXP2
+      KiR5bGU8JXgLsh1jgv/22rgUE/zd0V0kg6I79JmFWSYdrsumZaM7lFhVgU6HAg/wUv8OYo46
+      wWcWZrlRKgqylmFR1y1ZCb50Y47PPvmE5cKDLb56ZZn5W2ZjZyywh8ejgqQEX1+JUrp2ESIh
+      Lp/9iP7BAc5NldjbrXJ91SJGiUg0Rml1haqWYXl5hZNPHSSdTt/vGB4eWxZJCe4I1InvfgIV
+      6OxIM7tSxygtU0h2kk6EyMRHqK/l8IVixIIRBvsPgVTiwcPj0UBSgk+ObGQzL92Vx/ZgW/gw
+      /J9vfkLeYRX83YNd9DhSMu5Ld7Ez6ahB65Id2sb9m9bU5XqzQU2RXILbpkWt5VLOSJMjKpIh
+      OTlUQDdoaqKbc7VlMlcSLbQKkIrK7tB/uGs3HQ6r66cudYKrLZOlqrhPVYFel1SWqiJnYz7R
+      k2VPRlznmywUeWNavJ6abfNP9+6RLMFvzExScZQzauqWpPAqCgQc1zisaXxvZK/Uz/9y9Qrl
+      thzS67zyO5IpXhwcck+MNTF5/4zPtm0zfuEzrt2UyyC1aiXqG0yq5eGxFXBNjLUwdYX5+Tkq
+      C9fwx7rw+zWMQBTaTb798jEWFxsk7BJv/fI8qmKz1oSd/V3Uy2VI9FCvlOhIxwkFAuzbt7HI
+      fQ+PzcA1MRaJBGDjt/vpzKTJL6yCL0A2mwAljqY1aTYb9AyMYDbKZNN9XD93lr07upm5FVDj
+      10vYSfkT5eGxlfiCxFjrJt09B4VWPPfSK8Lftm2SCAdRsHihL4tPgbm5Wfqy3V9Hnz08Hhqe
+      JXgLsh0twW4lkr4KTUPnrbycHdrNEvzRXJ5rjjhjBfCpiqgE23qD06dOsbRWlnZs221mZua4
+      fPkyOa8sksc2QZgCTZw9S3JwhPmrn3FJ62Lh/Puke0ZI9fXzxBOHuDn+ISv2ANnoHFcnrhKw
+      FcKDA6xdPY+phNn55Ivs6ts+by6P7Y/wBRjes4O5G1M0my3GxkbpG9rB0aefYnbqJmEfmCTY
+      OxIi1bUeJqkoKmOjw/QPDjLU309blyOJPDy2Ml+oAzQqBRp2kEwi8qBmm4anA2x9trIO8IWW
+      4HA8zcPrtsc/lKVGhfNrc4JMU1Reyu76rRz/g/kbVB1W24VKm2JDtMBH/CpdMdFNWbVs/IDh
+      sOa+3D8m1R52S4w1HE9yst+RwVtRpNhfkC2+AN/IDvCN7IAgm6uVOL8675Yd+iOhKHEuv67w
+      3nZ5Xp7J0wRsW+fXv3qHmXkv3tfj0UVyhy6Uyrz3wcdEAiqZkE1+rcr4xfN09I5iXblIdbmE
+      ubjMy8f3kM/PY6Lw+k+vcfjpp0mF/SzN5wiFI3z++Tm++0/+BUMdW3Pq5OEBLt6B1acAABX5
+      SURBVO7Qz7x0ksrMeaaXq5imRTqVIp2Mo5g2dSCa7MDQwEbl0NET9EQNioUG2bSfySWbnt4B
+      jNoqO/YdIRXeFr52HtsYyR0aoHf/YTYys9y/f73VD4b3sTw/x4tP9eH3eTmkPR4dHtoruqsv
+      +7B29Vtlvlbh1/OiYc+2bZpycmcWym0pwdIrw/080y8WF79eKPHTazcEmWXbLJTlzBj/+9OH
+      GEiIK1j5aplz87Kx0e3V8pNrcmKsgE9Bdfgul5oGdV301B1NJPn2yIjLXmUqLYtyW1R4FRSp
+      5NRoMsmrQ8OCTNd1Xp+awHD4krstP1oWUjvTZaEy5NP49uCeDfX9wuo8uaqY48qw1pNl3Tcx
+      lofH48B9E2Ml+zKUl5YI2CoVwySRSdJu6Lz80snN6quHx0NHyg4dj0XxA2Ojtz9jCsMDWfBH
+      6e1I/fZ76OHxNfLAxFivvOqeGMvDY7vguUNvQTbqCtE0DP7k/EVJ3pfwSzG0pmVLSmc2Gufp
+      no3VSN4oN8tFPnDJDq1YtpQYa7HSxln16TujQxzr7RJkk4UC7+Qc+1RgICXXGH6ud5SowxXi
+      7OIsU2UxMVa9bVFsmvdPjOWyCHJfbFvn/XffYXpWLpKRz80wk5Pjhz08tgL3TYwViqpcmFyl
+      I2gQT3VQbZgEjVV0f4IrFy4wtO8wox1Bqg2VoYNH8IXDdIVanPn4EwqtBtlEkF99/Dm7Dx4i
+      GvAxNDhwvz54eGwakhLcEWgxsPsJypUWXekEPQMj+BWTYrGIqYYJ+Sx27H+CdDLOvidOkJub
+      oTfuJ5FIEM4MkpubYbArzWBvF4eOHqczlSCR8GqHeWxNNpQYa3l+hq7B3Qz2iTl1zFaNky+u
+      xwcf2n/g1t+v0tuZBODF7NjX02sPj4fEY6UEf5if49PFJUFm27aU7MqybSaWatL2xwfiJEKi
+      8Xy21GLZkVwqqKmkI3Lm4mRYTmKVCmloDvcRpWmw5lAOTctGd3RUATIR2Zi/UtMl5TIR8klW
+      W7c7H1B9/GBsYxZWN24Ui7zjCJnVbJtMyIfhcF/+1uAOyR36g3ye8bVVQbYjleIVh3W5Yei8
+      Pn1NOv56eShR5lYn+N72d3C6Q5fKjhJJts2Zjz/g8lXRzJ/Pzdxxly7M5ah+GQ3aw2MTcXWH
+      fvONX1KptwibZQZ2HiSdCLOUm+H486+Qy+dJtVWmL31END3I+Uvj7Dp4iGxnirMfvU88GGbh
+      NxO8+u1XiXnOoB5bHFd36OLUZ7R8MdrlRbIdAS6v2GSzQ8RDGslEglDID9E06E0OHj1GIroe
+      M5ZJxVhabbJrdATdy5Do8Qjg7g596Ngtye51N+fRPgK35qmvvvbdB+zuwAN+8/DYejxWSvCj
+      wrXFOSYacolaZ+1fTVV5bXD3hvZ5am6Wyw7lcjiR4JWhkQ1t/3buOhVddOd2qxM8Vyvz2fKs
+      ILsdE2w6rNNOpR5uWawd4rZp0dBFYVjT+G/2fPW8s5IS/OvTn1JrW+RvafK53AyFQtF146XZ
+      ad55933aFmDbzOSmyOfngXUF2jZblCvNr9xJD4+vC0kJLjZDTF4+z/jkDXbP5civVRnNpnn7
+      rQV27x5irdIgYDTwxTo4cfwQwdw8V35zmqquYZllzEqDn/3NXxNMd/DsgUEu5RX+6Hvf2Kzz
+      8/B4IJISHNLa6LpOKpW+ExMMPgJKjfKtog+pjrsFr5OJBFazAopCMpHCUFR2HzpKZyJErDND
+      d1X87Hp4bCUkJfiVEfeGh5447io/uH+/q/w2QwP32aGHxxZgWyjBf3L2c8qOiNmWIStT3TGN
+      TkfSJtOypThfkK2JAH5VjrUt1A3KLTFW1qdC2C9bfV3yONHQLamfSWxqDtfhkUSC3xkblXfg
+      wk8mJlhrirrXyWyWQ12im3GuUubDOdHNOODz8Qc75boObomx1uo6VUcpKJ+KVDLKZ9sEFQXd
+      cQGKdUOywr842M+BTtHlZqZS4tSC6FEc8mmuFutfL9ygYYqW+WrLpGWIB2oaFtWWwx0aYCa/
+      fkFs2+b8hfOMX7jg6hp94+olPvrYzW3aplwqkZ/JuWzl4bG1kGy1uVyO3PWr+EMhbtxcwGzq
+      LK7O40dlcrHKkb0jBAJhludyFEo6Vy99ysXra3SFTDIdaa7MrmEVl8h09XJtKkdlcZJ49zCm
+      qWOafizF5Fvfenl7VOfzeOQRnsPiygI+fxiz3SAUT3H4YBe2baAoFqrVJtY9TH3hKh1HXqFV
+      W8Uwa6yUWnRl4nSnEjRrRbozaaIdEdRwhrBfIcAA2f4erk/nURQ/A9kuPCOxx1ZBGACpzl6e
+      6ey9X1uwbeZSUbKZEAOZL7e0Oeoyr/Tw2Gy2hRL8VSzBi/Uqpxed8aYK33WpQft18G7+BqW2
+      aGGNmCZKWFTWKy2TfElUQm3blpQ7gLBfxeeoPZyJ+Eg6XLl7wjGOdW0sUu+92etSTd+DmR5G
+      E6IleKFe5sLavCBTTIuT3SNSevQfj1+h2BLPPRXyEQ2ICwhtw6LmcC5zc2OHdbdv57n7FCRZ
+      pWmyWNU3WiLJvmMZ9vDYTriWSJq9doGffHKeJ44dR2+1SYRsFktlLp4bp2uwl4hX/9djm+Ba
+      IqlRb3Hw2HGikSi9nesW4VQqxdDYKFp9FS3ec7/9eXg8UghfgHAmy8svPCjJrc3cXIxsNvOA
+      No8WAdVHR0isYeA0dn2dpIJh/Ko45zUaDcqOOa9h2vgd81hFUeh2KTtU1puYjglyVAuQCYYE
+      Wcwv59V5UD8DPlGHCPnksE/bBt1hWFQtm0KrQdWx/tcRDhHxOxbEFRMc7UKaRtwvHstmPXTV
+      SdVoYRjO7VWcZkn7Vl8feyV4K3Ihn+djh+uy5mJd9qsqf7hLdkX5z+MTrDoswc/1Zznc3SW1
+      fdjMVEp8PC9abX2WTUBlQzHB51bmma6I3sf90QTHu/s3dPw/vzxOqSUq65mIj7gjHrrUNFko
+      O5Tg1ZsXeP/za/z9z35GG8C2uXDpIoWC7JsO0Fy9ybWF6oY65uGxFRG+P+16mWK5RWmlwluv
+      /zUVPUp/V4DS3AxnJxY5sq+LfMEmptbBaKD4oyzVg9T2d/LWO5/wj//5H3slkTweKYQBEOsa
+      ZLfawMw+T1ht0DT9xMIKZrONGskQT4bJ9IVIxSMYzRILi2sMpLIc2JOlXle8kkgejxzCExvv
+      GmLvfaaJo1LNpEHG7pF94+SzD7dnX4KpQgW1LnoABjRVUmb9PsVFkZSNJLYtVymBdZlTY0qH
+      giSCYjLWhmGw0nAUGbFxNdz41PVKK/dSN3Q0R58imkaXQ+FVFYX5mjwF1S1LSoRbareZq4pt
+      FQXpOOB+7n5VkTxko1qAkCYqpwrg3KWqrsudR1ppNKjrojtlVdel4zcMg0KrLshsez1U0omC
+      fE4+l0WNqF9jIB7cHkrw//bzD5hzuOX2xoOSW25XzE9HVLxhmopLwiib1bro4gxQbBg4r7lb
+      iaQbxRJ/OynmTrJtW4prBYgFZKttlw+0qDio+qJxvtEnZnJumSZ/Pi6XSGrpciZoRZEfzKBP
+      Ien4alu2LZTJvU0mLCfwOpjpYSQhxwR/6hITrFq2VCe40jTlpGQuhZPCmkrakQDMtGyWHAnJ
+      YP1hd8ZOh/2K9CxkIwme6MyKSnCjuMB7739E9ZZ/++0awWBz+YJ4oW3b4oP33iK/MEs+t3Lv
+      D1y6eFnqmIfHVkQYVtPj19j39HNcPfsOZ6fWSCp14vE4BT3IWGeYt1+/xsqyiR1W+d4f/R6x
+      SJjpG+PkZ20CH+YJRqMUtQHM3KeEO/oY63NPR+fhsVUQBsDuJ49z5uxpIokejh/uI67pWEoA
+      XfGTivj55MynvPTNp2kDGiaKotE/vJ9waBnVThKJhAh3jWHv7cYy5IqIHh5bDWEAqP4Izzz7
+      zH0bDzoSlB556mkARvod1uPOnQ+pextjNBUnZTm9H/0EHIaXVFgjEXJYXW2TluX0snQPX8zG
+      opLC6lSAAUKaj4G4aJizbWg5M9Zyy3PTMWeNY+IPiwaiZEC22qpAbzQqyRdrDXSHspIIBohq
+      4jza71Mkz0vLtmnqsmKtKO5lTZ24WdYxLRTLwnZYfcOqHA5qI+svQZ9CXOonKJYcj6gqzju0
+      HqLprF99u4rMtlCCv4oleLZa4b38tCR384Z4bWiMjvDXb+fYaImk+/GLm5MUHS7Wx7p62Z3u
+      +MJt26bBW/lJSe5Wq9fNHdoNXdcxDENyh94KOJTged778GMXd2gnNufOnuLa1AyXLsurEB4e
+      jwoOJXiS3uEhLn34cz7pPED+zBtkh/ZgWkXs+Bi2XiFk1nj25e9SqrY5fGyAt/7uT/n7X77D
+      3n37qdTKdAUMioRR60UwYLpQ5V/+q/+JhDxT8PDYdEQl+PhxTn/6OQM7D5Ia2kefViMWCfKz
+      16/y2g+fp1mr0deRIB0PMzTQzeT0LLsPPU2kq4TfanAjV+GJE4fIBsPEoxHatTK9xQYBl/m0
+      h8dW4LHXAVYadT5flqtbujlEn+jJkgiKymil3aKmiwYZBTmR7ZfBbrboyfzDXc7fmLlOqSV6
+      g+5MZeiPirXaLNuWDHu6ZfL5imjIglsWa8c5jSUyZKOiruL2NBmGQatt4HcsGHSGI2iO/Efl
+      douGISq369dT3u9XeXJvn/tjPwC+KmcX57m8uiLIVAWpTu/9rrLbzR0LRjm+wazNbvxq9oaU
+      ybltWtLD3tQtSi5WX2ffATqjmrSS4lcVyTpsWXKsrmJZrFV1qU7w7+3YRdIRo3BmYZbJYkGQ
+      qQr4petpS2Wg1n9wkSFf46ZhUXEmxiosz/E3P/1bam1xz6VC4U6IglWZ59LMmutBKoUCButW
+      4pm8VxvYY+sj6ADpzj56unv4/MxH+P2wcGMaAn7KoS5GwiarFZ0fvLCXUl3hV7/4KfPNEEFj
+      lahmsdQIYAY6Ge00qOshFpeWiFhlEgODFOcs/uhHvyOnofPw2GQk/+WBwQHqi9dpde9nNBRH
+      8akkUylUC0YBJRSjuXyd7oFROnwRkrEDGLUV9ka7WC616IwrVJvQk0kSDEAokSKwM+49/B5b
+      EnEAKAqDQwMwdCtXzLC7b/TLzz/pkAyt/3dQbrvdifsD9EREa6yqIM2NwV0PUBRZ4VZtxdV1
+      2enerQJdEdkSbFi2FJfrduywXyOmycYpt75bSluKwTVtnOG7rjqAaq17acq7lY+jurQLaRqp
+      kKgrWLbNfE0uZdsZiqA5J/wuCnSppVNt1b0UnV+VPZkO9mS+2ML6ZbiQz/PzG9cF2ZeJCa62
+      LEqOjNVBzcUlOBrjmd6NvbXemLlO2WFd1k0bRRGfdrcB4LNsQn4VzeFf4hKKgN+nEHa4PfRH
+      41JMcF3X+avJCWn7Z/r6Sbi4jTi5WiiwWJsRZybLNyf58PSnTE67J8GybftuuSTb5s1fvs6p
+      s7+R2rUrS8wXGly8PP6FHfHw2EzEkMh0ktr4Nc5MT2JXV/nLn77JwWeOodcaxPwmdiBBVGvy
+      6bk8f/y//g+UyyWUYJQ/+3f/hmi0m/S+E+Q++TnxRC/a4GGMxYtcO3+aqcU6+w7sR2+3CNl1
+      7FCa1155aZNO2cPjLsIAaOkmiVSaPfv2oLeaPPf8SbqGBu8UvLYBs13H50+BqTA4MEAk3UUy
+      dIJIIEL/vlFi7RN0dmYpNU0ywycxmiW6V2r0dGUo1w260/Kc1cNjs5CyQz97T3boXXIBDgBG
+      dqz//8Szz0u/PfXMcw6JGDv8dbDaaFBxzCc1RY5hjfgDRBwxrC3TkBK03o9MMITfJ1d+edi4
+      xSmHNU1KguVTFVabYqwsQCoUJOjop1+T46FDPo2VhqhIqopCxunODKSDIWmfblbbgM9HwpFw
+      S7Es/IClidv7FHltMOYPSO7UMb/sSKYqirT4cL99uhHWNLLR6PawBP/ni+epO6yMyaAPv0Pp
+      2p/pYldKLL+zFd2hx+dnOSclh4rzfP+QINNNkzfy16Ttn+8bIREISXInc7UyZ5dEt4eA6uM7
+      wxusPTw/y0RBNIoOJ5K8NODo56PiDn0/S/CDOP/ZKd755ZvUZIs6ufwMly9d+Mqd9PD4unC1
+      BJ87/R7FOli1NWqGQdgsslCNE4mESaSh0Y4SsIqkekfxt0s0mw0+++g9Lk0uMpDwkcokuXBz
+      hXSgTaqzm6vXp2mu5unsH6HaMqnNF/Clo3zvj37I9klo6PEo4moJtvUasZZCOrYLW4FWcY59
+      wW40zY9uVTGsALGwHxQFqxlnLlCkI5MiHOuktyOJ0aoSSmeJBwzsQIJY0Ed5rY9opofFmZvE
+      RnYTT4Y9I4THpuNuCea2bfcWgw82loy4hACPOAWD63scHtxYRZIvQ6NtUXUYZEKaiu0wU5bb
+      bZYdSl+53ZLifxUUOa711va6Je4zHgjciS+9TV03WKo7EmMBARcLq6rIbsbVtk7TkR3aadmF
+      9e0yQbmfpVaLpiHOSWP+ABFnhmWXTM7YlnSNAOptS7IEK8iKaFjTpO1Nw8AyTSk7tJv2aSMn
+      HwtpGimH16hpWSzU5QUAzcW0bttynHH41j63xUs4X2qx4lIqyBnwPW6sMVUWlUtVgVjAuTqh
+      8OqQXJP39alJVpvig32su5cDHc76u1X+4rIYV6sAvS5hcSFNkVZ8lKbBsiPRV9IvB4Brqsqz
+      vUOS/Bc3J6WyS0ddYoINy6baFgeKgskHc/KiwJXFulSO6bs7h/jOyJggy1dL0vaqZaNYtpQd
+      2i3OWDctyZI8kkhKCwBN0+Rnk6K1HCAelEsk6aaFc5yPJVO8ODAoZ4f+xZvvMLO6PrIuXbjM
+      vUmxbl4b5/Sn55l21ACen7jEmphYwcPjkUDKDj23XCB48XMuFhepq1GuTU8TNBrkV1Z4+uBO
+      xicvMz05TnVllL956wxPHh4jZltMXV3gR997xdW/w8NjqyJlh37tmzuolSss+gPsyESo6z40
+      vUww1YdumKQyGfbtGaLZNHnu5AmGBrOkNJuOuokFntuzxyOFlB06DtDXy/1MIZ19d+di9xYS
+      3cwkiIOJKClbHHr9sSAhvygL+FQCmmO+DVKon+oaEQyZUFiKYY365TJBEU1jOCnGyipAJiKr
+      XEFNTuZqKS1URyaBzi9hRMqEwgQcVlunBRwg6NMkJVZhPVmXk+GEj7ZjIh0PyDpN0KfR6VhA
+      UCyLYqMuGRczwbCUFMx08SZNuhj1FNavnZPOcBi/4x4tN5pU2mLc9m2FfltYgrdbiaSvmhhr
+      q6HrOm9NX5WyQ7+UHZNKJG2UpqG7JvB6qX+H5Drx9vQMl1ZFi/WeTJrXRobFGUt9bZZ33n2f
+      iZtzAJ4V12PbI3yTZyamOHjyOT77+79g/LMoRsDP5WvT7Bzpw7YtJq9eJZpMYyoBvv/aq5vV
+      Zw+Ph4YwAHYdP8Kpj9+mc/goMzNTnNi/g6VSm7DfwvRHeebkCxtKkOrh8aggDABfIMbJF78F
+      wJNH1ivBy2aWx5e1ZkOyBMf8AVdF2EMkFQxJ2aF96sbWDJuGIYVjtk3TNdv2Ur1GxScapXTL
+      JORQmG+7hv//NIFONTiVeA4AAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
