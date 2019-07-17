@@ -28,7 +28,6 @@
 
     <h1>Final Project</h1>
     <div id="timeline"></div>
-    <div id="characterCountPlot"></div>
 
     <div id="network"></div>
       <!-- Content here -->
