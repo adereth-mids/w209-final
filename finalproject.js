@@ -1,3 +1,17 @@
+
+//BG update helper function to generate lookup table for character houses
+var getHouseTable = function() {
+    var table = {};
+    d3.json("https://raw.githubusercontent.com/jeffreylancaster/game-of-thrones/master/data/characters-houses.json", function (data) {
+	data.house.forEach(function(c1) {
+	    c1.characters.forEach(function(c2) {
+		table[c2]=c1.name;
+	    })
+	})
+    })
+    return table
+}
+
 var getCharacterCount = function(episode) {
     characters = {}
     episode.scenes.forEach(function(scene) {
@@ -12,15 +26,15 @@ var getCharacterCount = function(episode) {
 var generateCharacterCountPlot = function(data) {
 
     var margin = {top: 20, right: 20, bottom: 50, left: 80},
-	    width = 960 - margin.left - margin.right,
-	    height = 480 - margin.top - margin.bottom;
+	width = 960 - margin.left - margin.right,
+	height = 480 - margin.top - margin.bottom;
 
-	var plot = d3.select("#characterCountPlot").append("svg")
-	    .attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.top + margin.bottom)
+    var plot = d3.select("#characterCountPlot").append("svg")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
 
-	var x = d3.scaleLinear().domain([1, data.episodes.length]).range([0, width]);
-	var y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
+    var x = d3.scaleLinear().domain([1, data.episodes.length]).range([0, width]);
+    var y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
 
     plot.append("g")
 	.attr("transform", "translate(" + margin.left + "," + (height + margin.top) + ")")
@@ -57,11 +71,12 @@ var generateCharacterCountPlot = function(data) {
 	.style("fill", "steelblue")
 	.style("stroke", "#000000")
 	.on("click", function(d,i) {
-	    generateGraph(data, i);
+	    //BG Update increased to i+1
+	    generateGraph(data, i+1);
 	})
-
-
-
+    // BG update to include tooltip
+	.append("plot:title")
+	.text(function(d) { return "S" + d.seasonNum + "E" + d.episodeNum + " - " + d.episodeTitle + ": " + d.episodeDescription; });
 }
 
 var getGraphBetweenEpisodes = function(data, episodeStart, episodeEnd) {
@@ -147,21 +162,35 @@ var getGraphForEpisode = function(data, episode) {
 
 var generateGraph = function(data, episode) {
     d3.select("#network").selectAll("svg").remove()
-    graphData = getGraphBetweenEpisodes(data, 0, episode);
+    graphData = getGraphBetweenEpisodes(data, episode - 1, episode);
 
     var margin = {top: 20, right: 20, bottom: 50, left: 80},
 	width = 960 - margin.left - margin.right,
-	height = 960 - margin.top - margin.bottom;
+	height = 480 - margin.top - margin.bottom;
 
     var svg = d3.select("#network").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
+
+
+    // BG update to not lose nodes outside of box
+    //custom force to put stuff in a box
+    function box_force() {
+	var radius = 50;
+	for (var i = 0, n = graphData.nodes.length; i < n; ++i) {
+            curr_node = graphData.nodes[i];
+            curr_node.x = Math.max(radius, Math.min(width - radius, curr_node.x));
+            curr_node.y = Math.max(radius, Math.min(height - radius, curr_node.y));
+	}
+    }
 
     var simulation = d3.forceSimulation()
  	.force("link", d3.forceLink().id(function(d) { return d.id; }))
 	.force("charge", d3.forceManyBody())
 	.force("center", d3.forceCenter(width / 2, height / 2))
     //	.strength(+this.value)
+    // BG update to not lose nodes outside of box
+	.force("box_force", box_force)
     ;
 
     function dragstarted(d) {
@@ -189,8 +218,18 @@ var generateGraph = function(data, episode) {
 	.data(graphData.links)
 	.enter().append("line")
 	.attr("stroke-width", function(d) { return 1; })
-    	.attr("stroke", function(d) { return "#000000"; });
+    	.attr("stroke", function(d) { return "#000000"; })
+	.style("opacity", 0.1);
 
+
+    // BG update to calculate max screen time for node radius
+    maxtime = 0;
+    graphData.nodes.forEach(function(d) {
+	if (d.screenTime > maxtime) {
+	    maxtime = d.screenTime;}
+	else{
+	    maxtime = maxtime;}
+    })
 
     var node = svg.append("g")
 	.attr("class", "nodes")
@@ -199,20 +238,26 @@ var generateGraph = function(data, episode) {
 	.enter().append("g")
 
     var circles = node.append("circle")
-	.attr("r", 5)
+    // BG update to radius based on screen time
+	.attr("r", function(d) { return 3+5*d.screenTime/maxtime; })
 	.attr("fill", function(d) { return "#ff0000"; })
+    // BG update increase radius when mouse over
+	.on("mouseover", function(d,i) {
+	    d3.select(this).attr("r",10);})
+	.on("mouseout", function(d,i) {
+	    d3.select(this).attr("r",function(d) { return 3+5*d.screenTime/maxtime; });})
     	.call(d3.drag()
 	      .on("start", dragstarted)
 	      .on("drag", dragged)
 	      .on("end", dragended));
-
-    var lables = node.append("text")
-	.text(function(d) {
-	    return d.id;
-	})
-	.attr('x', 6)
-	.attr('y', 3);
-
+    /*
+      var lables = node.append("text")
+      .text(function(d) {
+      return d.id;
+      })
+      .attr('x', 6)
+      .attr('y', 3);
+    */
 
 
     node.append("title")
@@ -241,8 +286,7 @@ var generateGraph = function(data, episode) {
 }
 
 
-
 d3.json("https://raw.githubusercontent.com/jeffreylancaster/game-of-thrones/master/data/episodes.json", function (data) {
     generateCharacterCountPlot(data);
-	//	generateGraph(data, 1);
-    })
+    //	generateGraph(data, 1);
+})
