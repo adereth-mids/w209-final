@@ -25,6 +25,8 @@ var getCharacterCount = function(episode) {
 
 var generateCharacterCountPlot = function(data) {
 
+	console.log(data)
+
     var margin = {top: 20, right: 20, bottom: 50, left: 80},
 	width = 960 - margin.left - margin.right,
 	height = 480 - margin.top - margin.bottom;
@@ -34,7 +36,7 @@ var generateCharacterCountPlot = function(data) {
 	.attr("height", height + margin.top + margin.bottom)
 
     var x = d3.scaleLinear().domain([1, data.episodes.length]).range([0, width]);
-    var y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
+    var y = d3.scaleLinear().domain([0, 80]).range([height, 0]);
 
     plot.append("g")
 	.attr("transform", "translate(" + margin.left + "," + (height + margin.top) + ")")
@@ -166,11 +168,17 @@ var generateGraph = function(data, episode) {
 
     var margin = {top: 20, right: 20, bottom: 50, left: 80},
 	width = 960 - margin.left - margin.right,
-	height = 480 - margin.top - margin.bottom;
+	height = 960 - margin.top - margin.bottom;
 
     var svg = d3.select("#network").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
+
+
+	color = d3.scaleOrdinal(d3.schemeCategory20) // Li: add color
+    r=8 // Li Add default radius.
+
+
 
 
     // BG update to not lose nodes outside of box
@@ -184,11 +192,16 @@ var generateGraph = function(data, episode) {
 	}
     }
 
+
     var simulation = d3.forceSimulation()
  	.force("link", d3.forceLink().id(function(d) { return d.id; }))
-	.force("charge", d3.forceManyBody())
+	.force("charge", d3.forceManyBody()
+		 .strength(function (d, i) { var a = i == 0 ? -1000 : -500;return a;})
+			.distanceMin(90).distanceMax(150)) // Li: add dynamic line distance
+	.force("collide", d3.forceCollide(r+1)) // Li: add collide
 	.force("center", d3.forceCenter(width / 2, height / 2))
     //	.strength(+this.value)
+
     // BG update to not lose nodes outside of box
 	.force("box_force", box_force)
     ;
@@ -212,14 +225,18 @@ var generateGraph = function(data, episode) {
 
 
     console.log(graphData)
+
+    color = d3.scaleOrdinal(d3.schemeCategory20) // Li: add color
+
     var link = svg.append("g")
 	.attr("class", "links")
 	.selectAll("line")
 	.data(graphData.links)
 	.enter().append("line")
-	.attr("stroke-width", function(d) { return 1; })
-    	.attr("stroke", function(d) { return "#000000"; })
-	.style("opacity", 0.1);
+	.attr("stroke-width", function(d) { return 0.5; })
+    	//.attr("stroke", function(d) { return "#000000"; })
+    	.style("stroke", function(d) { return color(d.id); }) // Li: use color group
+	.style("opacity", 0.5);
 
 
     // BG update to calculate max screen time for node radius
@@ -239,25 +256,31 @@ var generateGraph = function(data, episode) {
 
     var circles = node.append("circle")
     // BG update to radius based on screen time
-	.attr("r", function(d) { return 3+5*d.screenTime/maxtime; })
-	.attr("fill", function(d) { return "#ff0000"; })
+	.attr("r", function(d) { return 5+30*d.screenTime/maxtime; })
+	//Li .attr("fill", function(d) { return "#ff0000"; })
+	.attr("fill", function(d) { return color(d.id); })// Li: color per house -->d.house not working 
+	.style("opacity", 0.8) // Li: add color opacity 
+
     // BG update increase radius when mouse over
-	.on("mouseover", function(d,i) {
-	    d3.select(this).attr("r",10);})
+	.on("mouseover", function(d,i) {d3.select(this)
+		.attr("r", 40)
+		.style("font-size", 20);})
 	.on("mouseout", function(d,i) {
-	    d3.select(this).attr("r",function(d) { return 3+5*d.screenTime/maxtime; });})
+	    d3.select(this).attr("r",function(d) { return 5+30*d.screenTime/maxtime; });})
     	.call(d3.drag()
 	      .on("start", dragstarted)
 	      .on("drag", dragged)
 	      .on("end", dragended));
-    /*
+    
       var lables = node.append("text")
       .text(function(d) {
       return d.id;
       })
+      .style("font-size", function(d){return 5+8*d.screenTime/maxtime;}) // Li: add text size
+      .attr("fill","grey48") // Li: add text color
       .attr('x', 6)
       .attr('y', 3);
-    */
+    
 
 
     node.append("title")
