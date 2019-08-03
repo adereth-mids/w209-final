@@ -25,7 +25,7 @@ var getCharacterCount = function(episode) {
 
 var generateCharacterCountPlot = function(data) {
 
-	console.log(data)
+    console.log(data)
 
     var margin = {top: 20, right: 20, bottom: 50, left: 80},
 	width = 960 - margin.left - margin.right,
@@ -173,9 +173,13 @@ var generateGraph = function(data, episode) {
     var svg = d3.select("#network").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
+    //BG Update
 
+	.on('click', function(d) {
+	    _restoreEdges();
+	});
 
-	color = d3.scaleOrdinal(d3.schemeCategory20) // Li: add color
+    color = d3.scaleOrdinal(d3.schemeCategory20) // Li: add color
     r=8 // Li Add default radius.
 
 
@@ -196,8 +200,8 @@ var generateGraph = function(data, episode) {
     var simulation = d3.forceSimulation()
  	.force("link", d3.forceLink().id(function(d) { return d.id; }))
 	.force("charge", d3.forceManyBody()
-		 .strength(function (d, i) { var a = i == 0 ? -1000 : -500;return a;})
-			.distanceMin(90).distanceMax(150)) // Li: add dynamic line distance
+	       .strength(function (d, i) { var a = i == 0 ? -1000 : -500;return a;})
+	       .distanceMin(90).distanceMax(150)) // Li: add dynamic line distance
 	.force("collide", d3.forceCollide(r+1)) // Li: add collide
 	.force("center", d3.forceCenter(width / 2, height / 2))
     //	.strength(+this.value)
@@ -233,20 +237,14 @@ var generateGraph = function(data, episode) {
 	.selectAll("line")
 	.data(graphData.links)
 	.enter().append("line")
-	.attr("stroke-width", function(d) { return 0.5; })
-    	//.attr("stroke", function(d) { return "#000000"; })
-    	.style("stroke", function(d) { return color(d.id); }) // Li: use color group
+    //.attr("stroke-width", function(d) { return 0.5; })
+    	.attr("stroke", function(d) { return "#000000"; })
+    //	.style("stroke", function(d) { return color(d.id); }) // Li: use color group
 	.style("opacity", 0.5);
 
 
     // BG update to calculate max screen time for node radius
-    maxtime = 0;
-    graphData.nodes.forEach(function(d) {
-	if (d.screenTime > maxtime) {
-	    maxtime = d.screenTime;}
-	else{
-	    maxtime = maxtime;}
-    })
+    maxtime = d3.max(graphData.nodes, function(d) { return d.screenTime; });
 
     var node = svg.append("g")
 	.attr("class", "nodes")
@@ -257,30 +255,55 @@ var generateGraph = function(data, episode) {
     var circles = node.append("circle")
     // BG update to radius based on screen time
 	.attr("r", function(d) { return 5+30*d.screenTime/maxtime; })
-	//Li .attr("fill", function(d) { return "#ff0000"; })
-	.attr("fill", function(d) { return color(d.id); })// Li: color per house -->d.house not working 
-	.style("opacity", 0.8) // Li: add color opacity 
+    //Li .attr("fill", function(d) { return "#ff0000"; })
+	.attr("fill", function(d) { return color(d.id); })// Li: color per house -->d.house not working
+	.style("opacity", 0.8) // Li: add color opacity
 
     // BG update increase radius when mouse over
 	.on("mouseover", function(d,i) {d3.select(this)
-		.attr("r", 40)
-		.style("font-size", 20);})
+					.attr("r", 40)
+					.style("font-size", 20);})
 	.on("mouseout", function(d,i) {
 	    d3.select(this).attr("r",function(d) { return 5+30*d.screenTime/maxtime; });})
     	.call(d3.drag()
 	      .on("start", dragstarted)
 	      .on("drag", dragged)
-	      .on("end", dragended));
-    
-      var lables = node.append("text")
-      .text(function(d) {
-      return d.id;
-      })
-      .style("font-size", function(d){return 5+8*d.screenTime/maxtime;}) // Li: add text size
-      .attr("fill","grey48") // Li: add text color
-      .attr('x', 6)
-      .attr('y', 3);
-    
+	      .on("end", dragended))
+    //BG Update to highlight subnetwork
+        .on('click', function(d) {
+            _displayConnections(d.id);
+            // d3.event.stopPropagation();
+        });
+    //BG Update
+
+    function _restoreEdges()
+    {
+        d3.select("#network").selectAll("line")
+            .style("opacity", 1);
+    }
+    //BG Update
+    function _displayConnections(id)
+    {
+        var edges = d3.select("#network")
+            .selectAll("line");
+        edges.transition()
+            .style("opacity", function(d) {
+                var source = d.source.id;
+                var target = d.target.id;
+                if (source === id || target === id) return 1;
+                else return 0.05;
+            });
+    };
+
+    var lables = node.append("text")
+	.text(function(d) {
+	    return d.id;
+	})
+	.style("font-size", function(d){return 5+8*d.screenTime/maxtime;}) // Li: add text size
+	.attr("fill","grey48") // Li: add text color
+	.attr('x', 6)
+	.attr('y', 3);
+
 
 
     node.append("title")
